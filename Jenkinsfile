@@ -9,6 +9,16 @@ pipeline{
 				sh 'mvn clean package'
 			}
 		}
+		stage('SonarQube analysis'){
+			environment{
+				sonarqubePath= tool 'raj-sonarqube-scanner'
+			}
+			steps{
+				withSonarQubeEnv('saidemy-sonarqube-server') {  
+                    			sh "${scannerHome}/bin/sonar-scanner"  
+                		}
+			}
+		}
 
 	}
 }
