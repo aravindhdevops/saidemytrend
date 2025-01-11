@@ -11,7 +11,7 @@ pipeline{
 		}
 		stage('SonarQube analysis'){
 			environment{
-				sonarqubePath= tool 'raj-sonarqube-scanner'
+				scannerHome= tool 'raj-sonarqube-scanner'
 			}
 			steps{
 				withSonarQubeEnv('raj-sonarqube-server') {  
