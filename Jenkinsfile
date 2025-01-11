@@ -14,7 +14,7 @@ pipeline{
 				sonarqubePath= tool 'raj-sonarqube-scanner'
 			}
 			steps{
-				withSonarQubeEnv('saidemy-sonarqube-server') {  
+				withSonarQubeEnv('raj-sonarqube-server') {  
                     			sh "${scannerHome}/bin/sonar-scanner"  
                 		}
 			}
