@@ -1,4 +1,4 @@
-pipelines{
+pipeline{
 	agent any
 	environment{
 		PATH="/opt/maven/bin:$PATH"
@@ -9,5 +9,6 @@ pipelines{
 				sh 'mvn clean package'
 			}
 		}
+
 	}
 }
