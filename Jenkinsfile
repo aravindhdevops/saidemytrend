@@ -1,5 +1,5 @@
 
-def registry = 'https:
+def registry = 'https://aravindhraj.jfrog.io/'
 
 pipeline {                                    
 
@@ -35,12 +35,10 @@ pipeline {
 
         stage('SonarQube analysis') {         
             environment {                     
-                scannerHome = tool 'saidemy-sonar-scanner'  
-                                              
-            }                                 
-
+                scannerHome = tool 'raj-sonarqube-scanner'
+            }
             steps {                           
-                withSonarQubeEnv('saidemy-sonarqube-server') {  
+                withSonarQubeEnv('raj-sonarqube-server') {
                                               
                     sh "${scannerHome}/bin/sonar-scanner"  
                                               
